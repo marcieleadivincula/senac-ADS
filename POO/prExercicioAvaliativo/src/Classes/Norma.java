@@ -1,20 +1,19 @@
 package Classes;
 
 import java.util.ArrayList;
-
-import javax.swing.JOptionPane;
+import java.util.Date;
 
 public class Norma {
 	private String tituloNorma;
-	private String dataCriacaoNorma;
+	private Date dataCriacaoNorma;
 	private String orgaoNormativo;
 	private String versao;
 	private ArrayList<AnexoTecnico> listaAnexo = new ArrayList<AnexoTecnico>();
 
 	@Override
 	public String toString() {
-		String resultado = "\nTítulo da norma: " + getTituloNorma() + "\nData da criação: " + getDataCriacaoNorma() + "\nOrgão Normativo: "
-				+ getOrgaoNormativo() + "\nVersão: " + getVersao();
+		String resultado = "\nTítulo da norma: " + getTituloNorma() + "\nData da criação: " + getDataCriacaoNorma()
+				+ "\nOrgão Normativo: " + getOrgaoNormativo() + "\nVersão: " + getVersao();
 
 		for (AnexoTecnico anexo : listaAnexo) {
 			resultado += anexo.toString();
@@ -29,39 +28,26 @@ public class Norma {
 	public int getQtdeAnexoTecnico() {
 		return this.listaAnexo.size();
 	}
-	
-	/*
-	 * public String getNormaAntiga(String dataCriacaoNorma) {
-	 * 
-	 * String resultado = "\nTítulo da norma: " + getTituloNorma() + "\nData da criação: " + getDataCriacaoNorma() + "\nOrgão Normativo: "
-				+ getOrgaoNormativo() + "\nVersão: " + getVersao();
 
+	//Pega norma mais antiga (menor data de criação)
+	public Date getNormaAntiga(Date dataCriacaoNorma) {
+		Date MenorData = dataCriacaoNorma.getDataCriacaoNorma();
+		
 		for (Norma norma : listaNormas) {
-			resultado += norma.toString();
+			if (dataCriacaoNorma < MenorData) {
+				MenorData = dataCriacaoNorma;
+			}
 		}
-		return resultado;
-		
-	    String antiga = dataCriacaoNorma, atual = dataCriacaoNorma;
-		
-			if (dataCriacaoNorma > maior) {
-				maior = dataCriacaoNorma;
-			}
-			
-			if (dataCriacaoNorma < menor) {
-				menor = dataCriacaoNorma;
-			}
-			
-			return maior;
-	 * }
-	 */
-	
+		return MenorData;
+	}
+
 	// Construtor sem parâmetros
 	public Norma() {
 
 	}
 
 	// Construtor com parâmetros
-	public Norma(String tituloNorma, String dataCriacaoNorma, String orgaoNormativo, String versao,
+	public Norma(String tituloNorma, Date dataCriacaoNorma, String orgaoNormativo, String versao,
 			ArrayList<AnexoTecnico> listaAnexo) {
 		this.tituloNorma = tituloNorma;
 		this.dataCriacaoNorma = dataCriacaoNorma;
@@ -79,11 +65,11 @@ public class Norma {
 		this.tituloNorma = tituloNorma;
 	}
 
-	public String getDataCriacaoNorma() {
+	public Date getDataCriacaoNorma() {
 		return dataCriacaoNorma;
 	}
 
-	public void setDataCriacaoNorma(String dataCriacaoNorma) {
+	public void setDataCriacaoNorma(Date dataCriacaoNorma) {
 		this.dataCriacaoNorma = dataCriacaoNorma;
 	}
 

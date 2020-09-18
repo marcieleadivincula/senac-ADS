@@ -1,8 +1,10 @@
 package Classes;
 
+import java.util.Date;
+
 public class AnexoTecnico {
 	private String tituloAnexo;
-	private String dataCriacaoAnexo;
+	private Date dataCriacaoAnexo;
 	private String tema;
 	
 	@Override
@@ -16,7 +18,7 @@ public class AnexoTecnico {
 	}
 	
 	// Construtor com parâmetros
-	public AnexoTecnico(String tituloAnexo, String dataCriacaoAnexo, String tema) {
+	public AnexoTecnico(String tituloAnexo, Date dataCriacaoAnexo, String tema) {
 		this.tituloAnexo = tituloAnexo;
 		this.dataCriacaoAnexo = dataCriacaoAnexo;
 		this.tema = tema;
@@ -29,10 +31,10 @@ public class AnexoTecnico {
 	public void setTituloAnexo(String tituloAnexo) {
 		this.tituloAnexo = tituloAnexo;
 	}
-	public String getDataCriacaoAnexo() {
+	public Date getDataCriacaoAnexo() {
 		return dataCriacaoAnexo;
 	}
-	public void setDataCriacaoAnexo(String dataCriacaoAnexo) {
+	public void setDataCriacaoAnexo(Date dataCriacaoAnexo) {
 		this.dataCriacaoAnexo = dataCriacaoAnexo;
 	}
 	public String getTema() {
