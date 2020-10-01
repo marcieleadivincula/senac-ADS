@@ -30,16 +30,25 @@ public class Norma {
 	}
 
 	//Pega norma mais antiga (menor data de criação)
-	public Date getNormaAntiga(Date dataCriacaoNorma) {
-		Date MenorData = dataCriacaoNorma.getDataCriacaoNorma();
-		
-		for (Norma norma : listaNormas) {
-			if (dataCriacaoNorma < MenorData) {
-				MenorData = dataCriacaoNorma;
-			}
-		}
-		return MenorData;
-	}
+	/*
+	 * public Date getNormaAntiga(Date dataCriacaoNorma) { Date dataInicial,
+	 * dataFinal; String strDataInicial = "14/01/2017"; String strDataFinal =
+	 * "15/01/2017";
+	 * 
+	 * SimpleDateFormat sdf1 = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+	 * SimpleDateFormat sdf2 = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+	 * 
+	 * dataFinal = sdf1.parse(strDataFinal); dataInicial =
+	 * sdf2.parse(strDataInicial);
+	 * 
+	 * System.out.println(dataInicial.compareTo(dataFinal));
+	 * System.out.println(dataInicial.after(dataFinal));
+	 * 
+	 * Date MenorData = dataCriacaoNorma.getDataCriacaoNorma();
+	 * 
+	 * for (Norma norma : listaNormas) { if (dataCriacaoNorma < MenorData) {
+	 * MenorData = dataCriacaoNorma; } } return MenorData; }
+	 */
 
 	// Construtor sem parâmetros
 	public Norma() {
