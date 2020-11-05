@@ -12,8 +12,8 @@ public class Conexao {
 
     //driver, DRIVER = banco de dados, URL referente ao caminho
     public Connection getConexao() {
-        final String DRIVER = "com.mysql.jdbc.Driver";
-        final String URL = "jdbc:mysql://localhost:3306/manutencao";
+        final String DRIVER = "com.mysql.cj.jdbc.Driver";
+        final String URL = "jdbc:mysql://localhost:3306/manutencao?serverTimezone=UTC";
 
         //tenta a conexao, root e root como usuário e senha   
         try {
