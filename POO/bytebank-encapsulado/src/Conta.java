@@ -4,7 +4,24 @@ public class Conta {
 	private int agencia;
 	private int numero;
 	private Cliente titular;
+	private static int total; //declara que este objeto é da classe, ou seja, static = da classe
 
+	public Conta(int agencia, int numero) {
+		Conta.total++;
+		System.out.println("O total de contas é " + Conta.total);
+		this.agencia = agencia;
+		this.numero = numero;
+		System.out.println("Estou criando uma conta " + this.numero);
+	}
+	
+	// Construtor com parâmetros
+	public Conta(double saldo, int agencia, int numero, Cliente titular) {
+		this.saldo = saldo;
+		this.agencia = agencia;
+		this.numero = numero;
+		this.titular = titular;
+	}
+	
 	public void deposita(double saldo) {
 		this.saldo += saldo;
 	}
@@ -45,14 +62,26 @@ public class Conta {
 	}
 	
 	public void setAgencia(int agencia) {
+		if(agencia <= 0) {
+			System.out.println("Não pode valor menor igual a 0");
+			return;
+		}
 		this.agencia = agencia;
 	}
 	
 	public void setNumero(int numero) {
+		if(numero <= 0) {
+			System.out.println("Não pode valor menor igual a 0");
+			return;
+		}
 		this.numero = numero;
 	}
 	
 	public void setTitular(Cliente titular) {
 		this.titular = titular;
+	}
+	
+	public static int getTotal() {
+		return Conta.total;
 	}
 }

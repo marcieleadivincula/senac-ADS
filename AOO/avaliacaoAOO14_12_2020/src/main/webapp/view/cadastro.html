@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Cadastro</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+        integrity="sha384-4ZPLezkTZTsojWFhpdFembdzFudphhoOzIunR1wH6g1WQDzCAiPvDyitaK67mp0+" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="container" >
+            <a class="links" id="paracadastro"></a>
+            <a class="links" id="paralogin"></a>
+             
+            <div class="content">      
+              <!--FORMULÁRIO DE CADASTRO-->
+              <div id="cadastro">
+                <form method="post" action="signup" target="_blank"> 
+                  <h1>Cadastro</h1> 
+                   
+                  <p> 
+                    <label for="nome_cad">Seu nome</label>
+                    <input id="nome_cad" name="nome_cad" required="required" type="text" placeholder="nome" />
+                  </p>
+                   
+                  <p> 
+                    <label for="email_cad">Seu e-mail</label>
+                    <input id="email_cad" name="email_cad" required="required" type="email" placeholder="contato@htmlecsspro.com"/> 
+                  </p>
+                   
+                  <p> 
+                    <label for="senha_cad">Sua senha</label>
+                    <input id="senha_cad" name="senha_cad" required="required" type="password" placeholder="ex. 1234"/>
+                  </p>
+                   
+                  <p> 
+                    <input type="submit" value="Cadastrar"/> 
+                  </p>
+                   
+                  <p class="link">  
+                    Já tem conta?
+                    <a href="http://localhost:8080/avaliacaoAOO14_12_2020/view/login.html"> Ir para Login </a>
+                  </p>
+                </form>
+              </div>
+            </div>
+          </div>  
+    </body>
+</html>
