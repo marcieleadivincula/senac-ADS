@@ -10,7 +10,7 @@
     </servlet>
     <servlet>
         <servlet-name>cadastroController</servlet-name>
-        <servlet-class>controller.cadastroController</servlet-class>
+        <servlet-class>controller.registerController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>loginController</servlet-name>

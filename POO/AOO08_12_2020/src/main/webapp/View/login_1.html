@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Login</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+        integrity="sha384-4ZPLezkTZTsojWFhpdFembdzFudphhoOzIunR1wH6g1WQDzCAiPvDyitaK67mp0+" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="container" >
+            <a class="links" id="paralogin"></a>
+            <a class="links" id="paracadastro"></a>
+             
+            <div class="content">      
+              <!--FORMULÁRIO DE LOGIN-->
+              <div id="login">
+                <form method="post" action="signin" target="_blank"> 
+                  <h1>Login</h1> 
+                  <p> 
+                    <label for="nome_login">Seu e-mail</label>
+                    <input id="nome_login" name="nome_login" required="required" type="text" placeholder="ex. contato@htmlecsspro.com"/>
+                  </p>
+                   
+                  <p> 
+                    <label for="email_login">Sua senha</label>
+                    <input id="email_login" name="email_login" required="required" type="password" placeholder="ex. senha" /> 
+                  </p>
+                  
+                   <p> 
+                    <label for="saldo_login">Valor</label>
+                    <input id="saldo_login" name="saldo_login" required="required" type="text" placeholder="ex. valor" /> 
+                  </p>
+                   
+                  <p> 
+                    <input type="checkbox" name="manterlogado" id="manterlogado" value="" /> 
+                    <label for="manterlogado">Manter-me logado</label>
+                  </p>
+                   
+                  <p> 
+                    <input type="submit" value="Logar" /> 
+                  </p>
+                   
+                  <p class="link">
+                    Ainda não tem conta?
+                    <a href="http://localhost:8080/src/main/webapp/view/register.html">Cadastre-se</a>
+                  </p>
+                </form>
+              </div>
+            </div>
+          </div>  
+    </body>
+</html>

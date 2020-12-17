@@ -13,15 +13,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.FacadeUser;
 
 /**
  *
- * @author marci
+ * @author Marciele Adivincula
  */
-
-@WebServlet("/informacoes")
-public class loginController extends HttpServlet {
+@WebServlet("/signup")
+public class registerController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,7 +35,7 @@ public class loginController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            request.getRequestDispatcher("view/login.html").forward(request, response);
+            request.getRequestDispatcher("view/register.html").forward(request, response);
         }
     }
 
@@ -68,20 +66,18 @@ public class loginController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //processRequest(request, response);
-        String pagina = "view/negado.html";
-        String login = request.getParameter("nome_login");
-        String password = request.getParameter("email_login");
-        int valor = Integer.parseInt(request.getParameter("saldo_login"));
-        FacadeUser facadeUser = new FacadeUser(login, password, valor);
+        String pagina = "view/acesso_negado.html";
+        String username = request.getParameter("nome_cad");
+        String login = request.getParameter("email_cad");
+        String password = request.getParameter("senha_cad");
 
-        if (facadeUser.validar()) {
-            pagina = "view/permitido.html";
+        if (username == "Admin" && login == "admin" && password == "123") {
+            pagina = "view/acesso_permitido.html";
         }
 
         RequestDispatcher dispatcher;
         dispatcher = getServletContext().getRequestDispatcher(pagina);
         dispatcher.forward(request, response);
-
     }
 
     /**

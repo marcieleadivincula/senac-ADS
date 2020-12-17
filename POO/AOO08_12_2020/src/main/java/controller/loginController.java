@@ -7,6 +7,7 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,10 +16,10 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Marciele Adivincula
+ * @author marci
  */
-@WebServlet("/signup")
-public class cadastroController extends HttpServlet {
+@WebServlet("/signin")
+public class loginController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,7 +35,7 @@ public class cadastroController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            request.getRequestDispatcher("view/cadastro.html").forward(request, response);
+            request.getRequestDispatcher("view/login.html").forward(request, response);
         }
     }
 
@@ -64,7 +65,19 @@ public class cadastroController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        //processRequest(request, response);
+        String pagina = "view/acesso_negado.html";
+        String login = request.getParameter("nome_login");
+        String password = request.getParameter("email_login");
+
+        if (login == "admin" && password == "123") {
+            pagina = "view/acesso_permitido.html";
+        }
+
+        RequestDispatcher dispatcher;
+        dispatcher = getServletContext().getRequestDispatcher(pagina);
+        dispatcher.forward(request, response);
+
     }
 
     /**
