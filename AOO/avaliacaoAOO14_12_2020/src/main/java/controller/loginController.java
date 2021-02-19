@@ -17,7 +17,7 @@ import model.FacadeUser;
 
 /**
  *
- * @author marci
+ * @author Marciele Adivincula
  */
 
 @WebServlet("/informacoes")
