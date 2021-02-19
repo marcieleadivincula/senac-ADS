@@ -7,7 +7,7 @@ package model;
 
 /**
  *
- * @author marci
+ * @author Marciele Adivincula
  */
 public class login {
 
