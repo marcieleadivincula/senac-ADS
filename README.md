@@ -1,2 +1,2 @@
-# senac-ADS
-Projetos desenvolvidos durante o curso
+# Senac - ADS
+Projetos desenvolvidos durante o curso.
